@@ -1,0 +1,90 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Session {
+  id        String     @id @default(uuid())
+  name      String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  documents Document[]
+}
+
+model Document {
+  id          String    @id @default(uuid())
+  sessionId   String
+  session     Session   @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  filename    String
+  mimeType    String
+  fileSize    Int
+  textContent String
+  pageCount   Int?
+  createdAt   DateTime  @default(now())
+  analysis    Analysis?
+  qaTurns     QaTurn[]
+}
+
+model Analysis {
+  id                 String              @id @default(uuid())
+  documentId         String              @unique
+  document           Document            @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  documentType       String
+  macroStructure     String
+  macroProfile       String
+  motifs             String?
+  openQuestions      String?
+  followUpQuestions  String
+  rawJson            String
+  createdAt          DateTime            @default(now())
+  documentationUnits DocumentationUnit[]
+  quotes             Quote[]
+}
+
+model DocumentationUnit {
+  id                  String   @id @default(uuid())
+  analysisId          String
+  analysis            Analysis @relation(fields: [analysisId], references: [id], onDelete: Cascade)
+  deNumber            Int
+  title               String
+  boundary            String
+  documentType        String
+  textFunction        String
+  indicativeAbstract  String
+  descriptors         String
+  freeKeywords        String
+  category            String
+  evidenceType        String
+  aiRelevance         String
+  typicalUserQuestion String
+  retrievalFocus      String
+  sourceSpans         String
+  createdAt           DateTime @default(now())
+  quotes              Quote[]
+}
+
+model Quote {
+  id                  String             @id @default(uuid())
+  analysisId          String
+  analysis            Analysis           @relation(fields: [analysisId], references: [id], onDelete: Cascade)
+  documentationUnitId String?
+  documentationUnit   DocumentationUnit? @relation(fields: [documentationUnitId], references: [id])
+  text                String
+  location            String
+  rationale           String
+  createdAt           DateTime           @default(now())
+}
+
+model QaTurn {
+  id            String   @id @default(uuid())
+  documentId    String
+  document      Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  question      String
+  answer        String
+  answerMode    String
+  referencedDes String
+  createdAt     DateTime @default(now())
+}
