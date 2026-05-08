@@ -1,0 +1,36 @@
+.network-graph {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.network-graph svg {
+  display: block;
+  border-radius: var(--radius-sm);
+  background: #fafafa;
+}
+
+.network-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 2px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-label {
+  font-size: 10px;
+  color: var(--text-secondary);
+}

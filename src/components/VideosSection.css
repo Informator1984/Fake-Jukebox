@@ -1,0 +1,213 @@
+.videos-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.vs-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px 8px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.vs-title {
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.vs-count {
+  font-size: 12px;
+  background: var(--teal);
+  color: white;
+  border-radius: 10px;
+  padding: 1px 7px;
+  font-weight: 600;
+}
+
+.vs-body {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0;
+  min-height: 120px;
+}
+
+.vs-featured {
+  border-right: 1px solid var(--border);
+}
+
+.vs-thumbnail {
+  width: 100%;
+  height: 100%;
+  min-height: 110px;
+}
+
+.vs-thumb-bg {
+  width: 100%;
+  height: 100%;
+  min-height: 110px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.vs-play-overlay {
+  font-size: 28px;
+  color: rgba(255,255,255,0.85);
+}
+
+.vs-thumb-title {
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 0 8px;
+  line-height: 1.3;
+}
+
+.vs-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.vs-track-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid #f5f5f5;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  background: none;
+}
+.vs-track-item:hover { background: #f9f9f9; }
+.vs-track-item--active { background: var(--teal-light); }
+
+.vs-track-thumb {
+  width: 28px;
+  height: 28px;
+  background: #333;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.vs-track-info { flex: 1; min-width: 0; }
+.vs-track-title { font-size: 11px; font-weight: 500; color: var(--text); line-height: 1.3; }
+.vs-track-meta { font-size: 10px; color: var(--text-muted); margin-top: 1px; }
+.vs-track-duration { font-size: 11px; color: var(--text-muted); flex-shrink: 0; }
+
+.vs-player {
+  background: #1a1a2e;
+  padding: 8px 12px 6px;
+  border-top: 1px solid #333;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.player-btn {
+  color: rgba(255,255,255,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.player-btn:hover { background: rgba(255,255,255,0.15); }
+
+.player-time {
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+  font-family: monospace;
+  min-width: 36px;
+  flex-shrink: 0;
+}
+
+.player-progress {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.player-progress-bar {
+  height: 100%;
+  background: var(--teal);
+  border-radius: 2px;
+  transition: width 0.1s;
+}
+
+.player-progress-thumb {
+  position: absolute;
+  top: -4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+
+.player-vol-icon { color: rgba(255,255,255,0.7); flex-shrink: 0; }
+
+.player-vol-slider {
+  width: 50px;
+  height: 3px;
+  cursor: pointer;
+  accent-color: var(--teal);
+  flex-shrink: 0;
+}
+
+.player-meta-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.player-tag {
+  font-size: 10px;
+  color: rgba(255,255,255,0.55);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  padding-right: 6px;
+}
+.player-tag:last-child { border-right: none; }
+
+.vs-footer {
+  padding: 8px 14px;
+  border-top: 1px solid #f5f5f5;
+}
+
+.vs-all-link {
+  font-size: 12px;
+  color: var(--teal);
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+.vs-all-link:hover { text-decoration: underline; }

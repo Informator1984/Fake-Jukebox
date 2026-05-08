@@ -1,0 +1,118 @@
+.reading-helper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.rh-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #f8f8ff;
+  border-bottom: 1px solid var(--border);
+}
+
+.rh-icon { color: var(--blue-gray); flex-shrink: 0; margin-top: 2px; }
+
+.rh-title-block { flex: 1; min-width: 0; }
+.rh-title { font-size: 13px; font-weight: 700; color: var(--text); }
+.rh-subtitle { font-size: 11px; color: var(--text-secondary); margin-top: 1px; }
+
+.rh-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid var(--blue-gray);
+  color: var(--blue-gray);
+  background: white;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.rh-action-btn:hover { background: var(--blue-gray-light); }
+
+.rh-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  gap: 0;
+}
+
+.rh-tab {
+  padding: 7px 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.rh-tab:hover { color: var(--text); }
+.rh-tab--active { color: var(--teal); border-bottom-color: var(--teal); font-weight: 500; }
+
+.rh-body { padding: 12px 14px; }
+
+.rh-selected-text {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.rh-selected-label { color: var(--text-muted); }
+.rh-selected-val { color: var(--text); font-weight: 500; }
+
+.rh-content {}
+
+.rh-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.rh-col-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.rh-list {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rh-list li { }
+.rh-list li span { color: var(--text-secondary); font-size: 11px; }
+
+.rh-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.rh-empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.rh-footer {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.rh-full-link {
+  font-size: 12px;
+  color: var(--teal);
+  cursor: pointer;
+  font-weight: 500;
+}
+.rh-full-link:hover { text-decoration: underline; }
